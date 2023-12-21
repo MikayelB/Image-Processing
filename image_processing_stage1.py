@@ -72,7 +72,7 @@ def process_image(input_path, output_folder):
     handwriting = extract_handwriting(no_marks)
 
     # Crop and save
-    output_path = os.path.join(output_folder, os.path.basename(input_path).replace(".png", "_p1_bin.png"))
+    output_path = os.path.join(output_folder, os.path.basename(input_path).replace(".png", "_bin.png"))
     crop_and_save(handwriting, output_path)
 
     # Adjust brightness/contrast
@@ -82,7 +82,7 @@ def process_image(input_path, output_folder):
     binary_image = convert_to_binary(adjusted_image)
 
     # Save the binary image
-    binary_output_path = os.path.join(output_folder, os.path.basename(input_path).replace(".png", "_p1_bin.png"))
+    binary_output_path = os.path.join(output_folder, os.path.basename(input_path).replace(".png", "_bin.png"))
     cv2.imwrite(binary_output_path, binary_image)
 
 def main():
